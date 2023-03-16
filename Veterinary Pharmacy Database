@@ -1,0 +1,27 @@
+--Create a veterinary pharmacy datebase
+CREATE TABLE veterinary_pharmacy (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, expiration INTEGER);
+
+INSERT INTO veterinary_pharmacy VALUES (1, 'atropine', 2, 50, 2024);
+INSERT INTO veterinary_pharmacy VALUES (2, 'ampicillin', 45, 10, 2027);
+INSERT INTO veterinary_pharmacy VALUES (3, 'acepromazine', 3, 55, 2028);
+INSERT INTO veterinary_pharmacy VALUES (4, 'ampicillin sulbactam', 70, 30, 2024);
+INSERT INTO veterinary_pharmacy VALUES (5, 'cefazolin', 52, 20, 2024);
+INSERT INTO veterinary_pharmacy VALUES (6, 'calcium gulconate', 3, 36, 2026);
+INSERT INTO veterinary_pharmacy VALUES (7, 'cerenia', 57, 70, 2029);
+INSERT INTO veterinary_pharmacy VALUES (8, 'clindamycin', 4, 45, 2025);
+INSERT INTO veterinary_pharmacy VALUES(9, 'buprenorphine', 6, 75, 2023);
+INSERT INTO veterinary_pharmacy VALUES (10, 'diphenhydramine', 4, 14, 2024);
+INSERT INTO veterinary_pharmacy VALUES (11, 'dexamethasone sp', 6, 23, 2028);
+INSERT INTO veterinary_pharmacy VALUES (12, 'dexdomitor', 6, 86, 2026);
+INSERT INTO veterinary_pharmacy VALUES (13, 'doxycycline', 15, 105, 2027);
+INSERT INTO veterinary_pharmacy VALUES (14, 'famotidine', 57, 17, 2027);
+INSERT INTO veterinary_pharmacy VALUES (15, 'fentanyl', 38, 68, 2028);
+
+--display the database ordered by price
+SELECT * FROM veterinary_pharmacy ORDER BY price asc;
+
+--what is the average price of all the medications?
+SELECT SUM(price) FROM veterinary_pharmacy;
+
+--what medications will be expiring in 2024 and earlier?
+SELECT medication, expiration FROM veterinary_pharmacy WHERE expiration <=2024 ORDER BY expiration asc;
